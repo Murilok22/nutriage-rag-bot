@@ -1,0 +1,19 @@
+# Ambiente Virtual
+venv/
+.venv/
+
+# Chaves de API e Variáveis Locais
+.env
+
+# Banco de Dados Local
+*.db
+*.sqlite3
+
+# Arquivos de Cache do Python
+__pycache__/
+*.pyc
+
+# Banco de Dados Local e Vetorial
+*.db
+*.sqlite3
+chroma_db/
