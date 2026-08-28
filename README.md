@@ -44,3 +44,69 @@ Desenvolvimento de um **Agente Assíncrono com RAG e IA em Python** que:
           │                            └── [Sucesso] ───▶ Saída Pydantic (JSON)
           ▼
 [ Persistência no SQLite ] ───────▶ [ Resposta Formatada no Telegram ]
+
+
+📂 Estrutura do Repositório
+Plaintext
+
+nutriage-rag-bot/
+├── bot_telegram.py     # Listener assíncrono do Telegram (Handling & Typing)
+├── main.py             # Agente de IA, Pydantic Schema, Guardrails e Fallback
+├── knowledge_base.py   # Gerenciador de embeddings e buscas vetoriais (ChromaDB)
+├── ingestao_urls.py    # Script de raspagem e carga da base de conhecimento
+├── database.py         # Persistência local de atendimentos e históricos (SQLite)
+├── schemas.py          # Definição do contrato de dados da triagem (Pydantic)
+├── requirements.txt    # Dependências do projeto
+├── .env.example        # Modelo de variáveis de ambiente
+└── README.md           # Documentação completa do projeto
+
+🛠️ Tech Stack & Ferramentas
+
+    Linguagem: Python 3.10+ (asyncio)
+
+    LLM Provider: Google GenAI SDK (google-genai), modelo gemini-3.5-flash-lite
+
+    Vector Store & RAG: ChromaDB
+
+    Validação & Schemas: Pydantic (Structured Outputs)
+
+    Interface de Mensageria: python-telegram-bot
+
+    Banco de Dados Local: SQLite3
+
+🚀 Como Executar o Projeto
+
+    1. Clonar o Repositório:
+    Bash
+
+    git clone [https://github.com/Murilok22/nutriage-rag-bot.git](https://github.com/Murilok22/nutriage-rag-bot.git)
+    cd nutriage-rag-bot
+
+    2. Configurar o Ambiente Virtual:
+    Bash
+
+    python -m venv venv
+    source venv/bin/activate  # Linux/Mac
+    .\venv\Scripts\activate   # Windows
+    pip install -r requirements.txt
+
+    3. Configurar as Variáveis de Ambiente:
+    Crie um arquivo .env baseado no .env.example:
+    Snippet de código
+
+    GEMINI_API_KEY=sua_chave_gemini_aqui
+    TELEGRAM_BOT_TOKEN=seu_token_telegram_aqui
+
+    4. Executar a Aplicação:
+    Bash
+
+    python bot_telegram.py
+
+
+🤝 Autor
+
+Desenvolvido por Murilo Oliveira Silva
+
+    LinkedIn: in/murilooliveiras
+
+    E-mail: murilomos@hotmail.com
